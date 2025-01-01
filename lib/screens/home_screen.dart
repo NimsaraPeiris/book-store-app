@@ -6,23 +6,60 @@ class HomeScreen extends StatelessWidget {
   final List<Book> books = [
     Book(
       id: '1',
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
+      title: 'Dark Hope',
+      author: 'H.D. Smith',
       price: 19.99,
       imageUrl: '../assets/book1.jpeg'
     ),
     Book(
       id: '2',
-      title: 'To Kill a Mockingbird',
-      author: 'Harper Lee',
+      title: 'Harry Potter and The Philosopher\'s Stone',
+      author: 'J. K. Rowling',
       price: 14.99,
+      imageUrl: '../assets/book8.webp'
+    ),
+    Book(
+      id: '3',
+      title: 'The Outer Space',
+      author: 'Kimberly Hopkins',
+      price: 16.99,
+      imageUrl: '../assets/book3.png'
+    ),
+    Book(
+      id: '4',
+      title: 'Words of Radiance',
+      author: 'Brandon Sanderson',
+      price: 16.99,
+      imageUrl: '../assets/book4.jpg'
+    ),
+    Book(
+      id: '5',
+      title: 'The Court of Sinners & Snakes',
+      author: 'Hayley Rose',
+      price: 16.99,
+      imageUrl: '../assets/book5.jpg'
+    ),
+    Book(
+      id: '6',
+      title: 'OMEGA VI',
+      author: 'Adam Lewis',
+      price: 16.99,
+      imageUrl: '../assets/book6.jpg'
+    ),
+    Book(
+      id: '7',
+      title: 'Shapeshift',
+      author: 'Lucas LLoyd',
+      price: 16.99,
+      imageUrl: '../assets/book7.jpg'
+    ),
+    Book(
+      id: '8',
+      title: 'Harry Potter and The Goblet of Fire',
+      author: 'J. K. Rowling',
+      price: 16.99,
       imageUrl: '../assets/book2.jpg'
     ),
-    Book(id: '3', 
-    title: 'The Catcher in the Rye', 
-    author: 'J. D. Salinger', 
-    price: 16.99, 
-    imageUrl: '../assets/book3.png'),
   ];
 
   HomeScreen({Key? key}) : super(key: key);
