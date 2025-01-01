@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'screens/book_details_screen.dart';
 import 'package:provider/provider.dart';
 import 'providers/cart_provider.dart';
-import 'providers/book_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/cart_screen.dart';
 

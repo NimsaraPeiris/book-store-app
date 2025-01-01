@@ -19,5 +19,5 @@ dev_dependencies:
 
 flutter:
   assets:
-    - assets/book1.jpeg
+    - assets/
   uses-material-design: true
