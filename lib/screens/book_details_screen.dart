@@ -31,6 +31,7 @@ class BookDetailsScreen extends StatelessWidget {
                       style:
                           Theme.of(context).textTheme.headlineSmall?.copyWith(
                                 fontWeight: FontWeight.bold,
+                                color: Colors.teal,
                               ),
                     ),
                     const SizedBox(width: 8),
@@ -65,12 +66,11 @@ class BookDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '\$${book.price.toStringAsFixed(2)}',
-                      style:
-                          Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      'Rs.${book.price.toStringAsFixed(2)}',
+                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                     ElevatedButton.icon(
                       onPressed: () {
@@ -82,8 +82,15 @@ class BookDetailsScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: const Icon(Icons.shopping_cart),
-                      label: const Text('Add to Cart'),
+                      icon: const Icon(Icons.shopping_cart,
+                      color: Colors.white,),
+                      label: const Text('Add to Cart',
+                      style: TextStyle(
+                        color: Colors.white,
+                      )
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.teal,),
                     ),
                   ],
                 ),
