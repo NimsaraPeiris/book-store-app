@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (ctx) => CartProvider(),
       child: MaterialApp(
-        title: 'Bokok Store',
+        title: 'Book Store',
         theme: ThemeData(primarySwatch: Colors.green,
         useMaterial3: true,
         ),

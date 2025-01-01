@@ -8,21 +8,21 @@ class BookProvider extends ChangeNotifier {
       title: 'The Great Gatsby',
       author: 'F. Scott Fitzgerald',
       price: 9.99,
-      imageUrl: '../../assets/book1.jpeg'
+      img: '../../assets/book1.jpeg'
     ),
     Book(
       id: '2',
       title: '1984',
       author: 'George Orwell',
       price: 12.99,
-      imageUrl: '../../assets/book2.jpeg'
+      img: '../../assets/book2.jpeg'
     ),
     Book(
       id: '3',
       title: 'To Kill a Mockingbird',
       author: 'Harper Lee',
       price: 14.99,
-      imageUrl: '../../assets/book3.jpeg'
+      img: '../../assets/book3.jpeg'
     ),
   ];
 

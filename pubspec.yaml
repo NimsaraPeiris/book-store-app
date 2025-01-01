@@ -21,4 +21,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - ./assets/covers/book1.jpeg
+    - ./assets/covers/book2.jpg
+    - ./assets/covers/book3.png
+    - ./assets/covers/book4.jpg
+    - ./assets/covers/book5.jpg
+    - ./assets/covers/book6.jpg
+    - ./assets/covers/book7.jpg
+    - ./assets/covers/book8.webp
+    - ./assets/covers/book9.jpg
