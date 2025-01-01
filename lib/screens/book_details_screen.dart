@@ -38,7 +38,7 @@ class BookDetailsScreen extends StatelessWidget {
                     Text(
                       'by ${book.author}',
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                            color: Colors.grey,
+                            color: Colors.black45,
                           ),
                     ),
                     const SizedBox(height: 24),

@@ -46,7 +46,9 @@ class BookCard extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 'By ${book.author}',
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Colors.black45,
+                ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -54,7 +56,7 @@ class BookCard extends StatelessWidget {
               Text(
                 'Rs.${book.price.toStringAsFixed(2)}',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.black,
                     ),
               ),
               const SizedBox(height: 8),

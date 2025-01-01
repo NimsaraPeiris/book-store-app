@@ -34,8 +34,9 @@ class CartScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final item = cart.items.values.toList()[index];
                     return ListTile(
-                      title: Text(item.book.title),
-                      subtitle: Text('${item.quantity} x \$${item.book.price}'),
+                      title: Text(item.book.title,
+                          style: Theme.of(context).textTheme.titleLarge),
+                      subtitle: Text('${item.quantity} x Rs.${item.book.price}'),
                       trailing: IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
@@ -49,8 +50,12 @@ class CartScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Text(
-                  'Total: \$${cart.totalAmount().toStringAsFixed(2)}',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  'Total: Rs.${cart.totalAmount().toStringAsFixed(2)}',
+                  style: TextStyle(
+                    fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize,
+                    color: Colors.teal,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
