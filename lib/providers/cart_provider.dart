@@ -12,7 +12,7 @@ class CartProvider extends ChangeNotifier {
   double totalAmount() {
   double total = 0.0;
   _items.forEach((key, cartItem) {
-    total += double.parse(cartItem.book.price) * cartItem.quantity;
+    total += cartItem.book.price * cartItem.quantity;
   });
   return total;
 }

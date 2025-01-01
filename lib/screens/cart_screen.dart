@@ -1,42 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/cart_provider.dart';
 
-class Provider<T> extends StatefulWidget {
-  final T value;
-  final Widget child;
-
-  Provider({this.value, this.child});
-
-  @override
-  _ProviderState<T> createState() => _ProviderState<T>();
-}
-
-class _ProviderState<T> extends State<Provider<T>> {
-  T _value;
-
-  @override
-  void initState() {
-    super.initState();
-    _value = widget.value;
-  }
+class CartScreen extends StatelessWidget {
+  const CartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<T>(
-      builder: (context, value, child) {
-        return child;
-      },
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Cart'),
+      ),
+      body: Consumer<CartProvider>(
+        builder: (context, cart, child) {
+          if (cart.items.isEmpty) {
+            return const Center(
+              child: Text('Your cart is empty'),
+            );
+          }
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: cart.items.length,
+                  itemBuilder: (context, index) {
+                    final item = cart.items.values.toList()[index];
+                    return ListTile(
+                      title: Text(item.book.title),
+                      subtitle: Text('${item.quantity} x \$${item.book.price}'),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.delete),
+                        onPressed: () {
+                          cart.removeItem(item.book.id);
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  'Total: \$${cart.totalAmount().toStringAsFixed(2)}',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              ),
+            ],
+          );
+        },
+      ),
     );
-  }
-}
-
-class Consumer<T> extends StatelessWidget {
-  final Widget child;
-  final Function builder;
-
-  Consumer({this.child, this.builder});
-
-  @override
-  Widget build(BuildContext context) {
-    return builder(context, _value, child);
   }
 }

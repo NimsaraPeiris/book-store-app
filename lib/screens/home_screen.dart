@@ -8,15 +8,21 @@ class HomeScreen extends StatelessWidget {
       id: '1',
       title: 'The Great Gatsby',
       author: 'F. Scott Fitzgerald',
-      price: '19.99',
+      price: 19.99,
+      imageUrl: '../assets/book1.jpeg'
     ),
     Book(
       id: '2',
       title: 'To Kill a Mockingbird',
       author: 'Harper Lee',
-      price: '14.99',
+      price: 14.99,
+      imageUrl: '../assets/book2.jpg'
     ),
-    Book(id: '3', title: 'The Catcher in the Rye', author: 'J. D. Salinger', price: '16.99'),
+    Book(id: '3', 
+    title: 'The Catcher in the Rye', 
+    author: 'J. D. Salinger', 
+    price: 16.99, 
+    imageUrl: '../assets/book3.png'),
   ];
 
   HomeScreen({Key? key}) : super(key: key);
