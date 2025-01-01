@@ -68,7 +68,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
   appBar: AppBar(
-    title: const Text('Book Store'),
+    title: const Text('Book Store',
+    style: TextStyle(
+      fontSize: 25,
+      color: Colors.black,
+      fontWeight: FontWeight.bold
+
+    )),
     actions: [
       IconButton(
         icon: const Icon(Icons.shopping_cart),

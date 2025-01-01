@@ -61,6 +61,32 @@ class BookCard extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.teal,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: const Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            right: 4.0), // add right padding to icon
+                        child: Icon(
+                          Icons.add_shopping_cart,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 8.0), // add left padding to text
+                        child: Text(
+                          'Add to Cart',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
                   onPressed: () {
                     context.read<CartProvider>().addItem(book);
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -70,7 +96,6 @@ class BookCard extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('Add to Cart'),
                 ),
               ),
             ],
