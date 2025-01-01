@@ -52,7 +52,7 @@ class BookCard extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                '\$${book.price.toStringAsFixed(2)}',
+                'Rs.${book.price.toStringAsFixed(2)}',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: Theme.of(context).primaryColor,
                 ),

@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/models/book.dart';
+import '../models/book.dart';
 class CartItem {
   final Book book;
   final int quantity;
