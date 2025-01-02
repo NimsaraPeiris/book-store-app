@@ -55,11 +55,11 @@ BookCard: A reusable widget for displaying book information.
 Ensure all required dependencies are installed.
 
 Run the following commands:
+#
+    flutter pub get
 
-# flutter pub get
-
-# flutter run
-
+    flutter run
+#
 <!-- Best Practices Followed -->
 
 Separation of Concerns: Logical division of app functionality.
