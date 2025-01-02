@@ -1,4 +1,4 @@
-**#Book Store App**
+# Book Store App
 
 ## Overview ##
 
@@ -62,13 +62,13 @@ Run the following commands:
 #
 <!-- Best Practices Followed -->
 
-Separation of Concerns: Logical division of app functionality.
+- Separation of Concerns: Logical division of app functionality.
 
-Reusable Components: Components like BookCard can be used across the app.
+- Reusable Components: Components like BookCard can be used across the app.
 
-State Management: Efficiently managed with the Provider package.
+- State Management: Efficiently managed with the Provider package.
 
-Clean File Structure: Organized and easy to navigate.
+- Clean File Structure: Organized and easy to navigate.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
