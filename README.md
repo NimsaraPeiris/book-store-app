@@ -3,6 +3,7 @@
 ## Overview ##
 
 This is a simple book store app built with Flutter, showcasing state management, reusable components, and a clean app structure.
+![Book Grid View](assets/screen_1.jpg)
 
 ## Features ##
 
