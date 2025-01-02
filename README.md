@@ -22,7 +22,7 @@ Cart Management:
 
 ## App Structure ##
 
-<!-- Models -->
+### Models
 
 `Book` Represents a book with the following attributes:
 
@@ -36,15 +36,15 @@ Cart Management:
 
 > Quantity
 
-<!-- Providers -->
+### Providers
 
 `CartProvider` Manages the state of the shopping cart using the Provider package.
 
-<!-- Widgets -->
+### Widgets
 
 `BookCard` A reusable widget for displaying book information.
 
-<!-- Screens -->
+### Screens
 
 > HomeScreen: Displays a grid of available books.
 
@@ -61,7 +61,7 @@ Run the following commands:
     flutter run
 #
 
-[!WARNING]
+> [!WARNING]
 **Best Practices Followed**
 
 - Separation of Concerns: Logical division of app functionality.
