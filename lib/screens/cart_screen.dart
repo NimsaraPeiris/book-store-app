@@ -11,13 +11,21 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cart'),
+        title: const Text('Cart',
+            style: TextStyle(
+                fontSize: 25,
+                color: Colors.black,
+                fontWeight: FontWeight.bold)),
       ),
       body: Consumer<CartProvider>(
         builder: (context, cart, child) {
           if (cart.items.isEmpty) {
             return const Center(
-              child: Text('Your cart is empty'),
+              child: Text('Your cart is empty',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold)),
             );
           }
           return Column(
@@ -45,15 +53,32 @@ class CartScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'Total: \$${cart.totalAmount.toStringAsFixed(2)}',
-                      style: Theme.of(context).textTheme.titleLarge,
+                      'Total: Rs.${cart.totalAmount.toStringAsFixed(2)}',
+                      style: TextStyle(
+                      fontSize: Theme.of(context).textTheme.titleSmall!.fontSize,
+                      color: Colors.teal,
+                      fontWeight: FontWeight.bold
+                      )
                     ),
                     const SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                          foregroundColor: Colors.white,
+                        ),
                         onPressed: () => _handleCheckout(context, cart),
-                        child: const Text('Checkout'),
+                        child: const Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Text(
+                          'Checkout',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
                       ),
                     ),
                   ],

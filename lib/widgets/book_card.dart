@@ -70,22 +70,15 @@ class BookCard extends StatelessWidget {
                     ),
                   ),
                   child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                            right: 4.0), // add right padding to icon
-                        child: Icon(
-                          Icons.add_shopping_cart,
-                          color: Colors.white,
-                        ),
+                      Icon(
+                        Icons.add_shopping_cart,
+                        color: Colors.white,
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 8.0), // add left padding to text
-                        child: Text(
-                          'Add to Cart',
-                          style: TextStyle(color: Colors.white),
-                        ),
+                      Text(
+                        'Add to Cart',
+                        style: TextStyle(color: Colors.white),
                       ),
                     ],
                   ),

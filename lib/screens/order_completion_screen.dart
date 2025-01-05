@@ -42,14 +42,21 @@ class OrderCompletionScreen extends StatelessWidget {
               orderId: orderId,
             ),
             const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/',
-                  (route) => false,
-                );
-              },
-              child: const Text('Continue Shopping'),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/',
+                    (route) => false,
+                  );
+                },
+                child: const Text('Continue Shopping'),
+              ),
             ),
           ],
         ),
