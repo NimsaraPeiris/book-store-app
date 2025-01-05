@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
+import '../utils/order_id_generator.dart';
+import 'order_completion_screen.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -9,21 +11,13 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cart',
-            style: TextStyle(
-                fontSize: 25,
-                color: Colors.black,
-                fontWeight: FontWeight.bold)),
+        title: const Text('Cart'),
       ),
       body: Consumer<CartProvider>(
         builder: (context, cart, child) {
           if (cart.items.isEmpty) {
             return const Center(
-              child: Text('Your cart is empty',
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.bold)),
+              child: Text('Your cart is empty'),
             );
           }
           return Column(
@@ -34,9 +28,8 @@ class CartScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final item = cart.items.values.toList()[index];
                     return ListTile(
-                      title: Text(item.book.title,
-                          style: Theme.of(context).textTheme.titleLarge),
-                      subtitle: Text('${item.quantity} x Rs.${item.book.price}'),
+                      title: Text(item.book.title),
+                      subtitle: Text('${item.quantity} x \$${item.book.price}'),
                       trailing: IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
@@ -49,18 +42,43 @@ class CartScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(16),
-                child: Text(
-                  'Total: Rs.${cart.totalAmount().toStringAsFixed(2)}',
-                  style: TextStyle(
-                    fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize,
-                    color: Colors.teal,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Total: \$${cart.totalAmount.toStringAsFixed(2)}',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () => _handleCheckout(context, cart),
+                        child: const Text('Checkout'),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           );
         },
+      ),
+    );
+  }
+
+  void _handleCheckout(BuildContext context, CartProvider cart) {
+    final orderId = generateOrderId();
+    final totalAmount = cart.totalAmount;
+    
+    // Clear cart after successful checkout
+    cart.clear();
+    
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => OrderCompletionScreen(
+          orderId: orderId,
+          totalAmount: totalAmount,
+        ),
       ),
     );
   }
